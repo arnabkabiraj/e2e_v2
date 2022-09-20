@@ -242,3 +242,16 @@ For how many steps the system is allowed to thermalize. The properties like magn
 The main outputs of the code are written to a log file (the name specified by the `log_filename` tag) in addition to the outputs printed to stdout and stderr. The full process of extraction of the magnetic parameters from the DFT data is detailed in this file. There would also be DFT calculation directories, namely *relaxations*, *static_runs*, and *MAE*. The *MC_Heisenberg* directory (or the directory specified by the `directory` tag of input_MC) contains all the outputs and dump files from the MC process. The main MC output data is written to a file with a name ending with *_M-X.dat*. This file should have data with 7 columns. The first column would be the temperature data. The second and third columns contain the magnetization and susceptibility data of the regions with up spins at the ground state. The fourth and fifth columns contain the magnetization and susceptibility data of the regions with down spins at the ground state. Finally, the sixth and seventh columns contain the magnetization and susceptibility data of the whole lattice. To determine either Curie or Neel temperature, one simply has to find at what temperature the data at the 3rd column peaks.
 
 A typical example of the calculation of Curie temperature of CrI<sub>3</sub>> with *U*=2.7 eV and *J*=0.7 eV can be found in this repository.
+
+
+## License
+
+e2e_v2.py is released under the MIT License. The terms of the license are as follows:
+
+>Copyright (c) 2020-2022 Arnab Kabiraj
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
