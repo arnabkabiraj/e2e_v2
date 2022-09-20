@@ -62,7 +62,7 @@ The structure file name. The structure files are read through the ase.io.read me
 * **DFT_supercell_size**, default = 2 2 1.
 The size of the supercell on which all the calculations will be performed. Note that the number of generated magnetic configurations and, in turn, the included number of interacting neighbors directly depends on this parameter. The default might not be enough for all lattice types. For example, in the case of hexagonal cells with coordination 6-6-6-12 (prototype: 2H or 1T Transition Metal Dichalcogenides) I recommend `DFT_supercell_size = 2 4 1`.
 
-* **vacuum**, default = 25, unit = &Angstrom;.
+* **vacuum**, default = 25, unit = angstrom.
 The amount of total vacuum added to the cells to eliminate spurious interaction from the periodically repeated layers. The default is a good choice. If any of the lattice parameters is too large, I suggest watching out for the VASP warning about charge sloshing and reducing the value of AMIN.
 
 * **strain**, default = none, unit = fraction of respective lattice parameter.
@@ -159,10 +159,10 @@ The [LDAUTYPE](https://www.vasp.at/wiki/index.php/LDAUTYPE) tag from VASP.
 * **POTCAR**, default = [pymatgen MPRelaxSet defaults](https://pymatgen.org/pymatgen.io.vasp.sets.html#pymatgen.io.vasp.sets.MPRelaxSet).
 Which variants of POTCAR files to use. For example, to use Cr_pv and Mg_sv pseudopotential variants in the same calculation, you have to write `POTCAR = Cr Cr_pv Mg Mg_sv`. If there are additional species you do not explicitly specify using this tag, the default POTCARS for them will be used.
 
-* **same_neighbor_thresh**, default = 0.05, unit = &Angstrom;.
+* **same_neighbor_thresh**, default = 0.05, unit = angstrom.
 How far apart sites should be treated under the same neighbor shell. A significantly higher value than the default is required if there is symmetry-breaking in the structure.
 
-* **same_neighbor_thresh_buffer**, default = 0.01, unit = &Angstrom;.
+* **same_neighbor_thresh_buffer**, default = 0.01, unit = angstrom.
 A small buffer value to break any possible ties between the neighbors.
 
 * **accuracy**, default = default.
@@ -171,10 +171,10 @@ Accuracy of the DFT calculations. The choices are `accuracy = default or high`.
 * **log_filename**, default = log.
 The name of the file where the log will be written.
 
-* **kpoints_density_relax**, default = 150 for `accuracy = default` and 300 for `accuracy = high`, unit = &Angstrom;<sup>-3</sup>.
+* **kpoints_density_relax**, default = 150 for `accuracy = default` and 300 for `accuracy = high`, unit = angstrom<sup>-3</sup>.
 The kpoints sampling density for relaxations
 
-* **kpoints_density_static**, default = 300 for `accuracy = default` and 1000 for `accuracy = high`, unit = $$\overset{\circ}{A}<sup>-3</sup>.
+* **kpoints_density_static**, default = 300 for `accuracy = default` and 1000 for `accuracy = high`, unit = angstrom<sup>-3</sup>.
 The kpoints sampling density for all static energy calculations
 
 
@@ -241,7 +241,7 @@ For how many steps the system is allowed to thermalize. The properties like magn
 
 The main outputs of the code are written to a log file (the name specified by the `log_filename` tag) in addition to the outputs printed to stdout and stderr. The full process of extraction of the magnetic parameters from the DFT data is detailed in this file. There would also be DFT calculation directories, namely *relaxations*, *static_runs*, and *MAE*. The *MC_Heisenberg* directory (or the directory specified by the `directory` tag of input_MC) contains all the outputs and dump files from the MC process. The main MC output data is written to a file with a name ending with *M-X.dat*. This file should have data with 7 columns. The first column would be the temperature data. The second and third columns contain the magnetization and susceptibility data of the regions with up spins at the ground state. The fourth and fifth columns contain the magnetization and susceptibility data of the regions with down spins at the ground state. Finally, the sixth and seventh columns contain the magnetization and susceptibility data of the whole lattice. To determine either Curie or Neel temperature, one simply has to find at what temperature the data at the 3rd column peaks.
 
-A typical example of the calculation of Curie temperature of CrI<sub>3</sub> with *U*=2.7 eV and *J*=0.7 eV can be found in this repository.
+A typical example of the calculation of Curie temperature of CrI<sub>3</sub> with *U* = 2.7 eV and *J* = 0.7 eV can be found in this repository.
 
 
 ## License
