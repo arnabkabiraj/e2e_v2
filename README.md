@@ -1,7 +1,7 @@
 # e2e_v2
 
 This project contains a single Python script that can determine the Curie or Neel Temperature and other relevant magnetic properties of 2D materials from the crystal structure information. The code has many requirements; the primary one is having access to the code [VASP](https://www.vasp.at/). The script is tightly integrated with VASP and relies upon it to perform all the energy calculations. However, with a bit of effort, it should be possible to interface this code with other *ab initio* codes as well. Besides VASP, the code relies heavily on other Python packages such as [pymatgen](https://pymatgen.org/), [custodian](http://materialsproject.github.io/custodian/), [ASE](https://wiki.fysik.dtu.dk/ase/) and [numba](https://numba.pydata.org/). These packages need to be available in your environment to run the script properly. The proper installation instructions for these packages can be found on their respective websites, which I have hyperlinked.
-The detailed working principle of the code can be found in the following publications. Please cite these if you find e2e_v2.py useful. 
+The detailed working principle of the code can be found in the following publications. Please cite these if you find e2e_v2 useful. 
 
 1. Kabiraj, A., Kumar, M. & Mahapatra, S. High-throughput discovery of high Curie point two-dimensional ferromagnetic materials. *npj Comput Mater* **6**, 35 (2020). https://doi.org/10.1038/s41524-020-0300-2
 2. Arnab Kabiraj, Tripti Jain, and Santanu Mahapatra. Massive Monte Carlo simulations-guided interpretable learning of two-dimensional Curie temperature. *manuscript under review*
@@ -12,7 +12,7 @@ The detailed working principle of the code can be found in the following publica
 It is best to create a conda or virtual environment for this script. Then the required packages can be installed using pip or conda.
 A proper installation of pymatgen is essential. The detailed instructions can be found at https://pymatgen.org/installation.html. You would need to install the enumlib and interface it with pymatgen. Moreover, proper installation of bader is required if you want to perform bader charge and magnetism partitioning. The POTCAR library also needs to be properly linked to pymatgen. See https://pymatgen.org/installation.html#step-4-optional-install-enumlib-and-bader-only-for-osx-and-linux and https://pymatgen.org/installation.html#potcar-setup.
 
-Currently, there is a small but crucial bug in [pymatgen input sets module](https://github.com/materialsproject/pymatgen/blob/master/pymatgen/io/vasp/sets.py) which must be fixed to run e2e_v2.py. The lines:
+Currently, there is a small but crucial bug in [pymatgen input sets module](https://github.com/materialsproject/pymatgen/blob/master/pymatgen/io/vasp/sets.py) which must be fixed to run e2e_v2. The lines:
 ```
 if "MAGMOM" in self.prev_incar:
     del self.prev_incar["magmom"]
@@ -62,7 +62,7 @@ The structure file name. The structure files are read through the ase.io.read me
 * **DFT_supercell_size**, default = 2 2 1.
 The size of the supercell on which all the calculations will be performed. Note that the number of generated magnetic configurations and, in turn, the included number of interacting neighbors directly depends on this parameter. The default might not be enough for all lattice types. For example, in the case of hexagonal cells with coordination 6-6-6-12 (prototype: 2H or 1T Transition Metal Dichalcogenides) I recommend `DFT_supercell_size = 2 4 1`.
 
-* **vacuum**, default = 25, unit = angstrom.
+* **vacuum**, default = 25, unit = &Angstrom;.
 The amount of total vacuum added to the cells to eliminate spurious interaction from the periodically repeated layers. The default is a good choice. If any of the lattice parameters is too large, I suggest watching out for the VASP warning about charge sloshing and reducing the value of AMIN.
 
 * **strain**, default = none, unit = fraction of respective lattice parameter.
@@ -159,10 +159,10 @@ The [LDAUTYPE](https://www.vasp.at/wiki/index.php/LDAUTYPE) tag from VASP.
 * **POTCAR**, default = [pymatgen MPRelaxSet defaults](https://pymatgen.org/pymatgen.io.vasp.sets.html#pymatgen.io.vasp.sets.MPRelaxSet).
 Which variants of POTCAR files to use. For example, to use Cr_pv and Mg_sv pseudopotential variants in the same calculation, you have to write `POTCAR = Cr Cr_pv Mg Mg_sv`. If there are additional species you do not explicitly specify using this tag, the default POTCARS for them will be used.
 
-* **same_neighbor_thresh**, default = 0.05, unit = angstrom.
+* **same_neighbor_thresh**, default = 0.05, unit = &Angstrom;.
 How far apart sites should be treated under the same neighbor shell. A significantly higher value than the default is required if there is symmetry-breaking in the structure.
 
-* **same_neighbor_thresh_buffer**, default = 0.01, unit = angstrom.
+* **same_neighbor_thresh_buffer**, default = 0.01, unit = &Angstrom;.
 A small buffer value to break any possible ties between the neighbors.
 
 * **accuracy**, default = default.
@@ -171,10 +171,10 @@ Accuracy of the DFT calculations. The choices are `accuracy = default or high`.
 * **log_filename**, default = log.
 The name of the file where the log will be written.
 
-* **kpoints_density_relax**, default = 150 for `accuracy = default` and 300 for `accuracy = high`, unit = angstrom<sup>-3</sup>.
+* **kpoints_density_relax**, default = 150 for `accuracy = default` and 300 for `accuracy = high`, unit = &Angstrom;<sup>-3</sup>.
 The kpoints sampling density for relaxations
 
-* **kpoints_density_static**, default = 300 for `accuracy = default` and 1000 for `accuracy = high`, unit = angstrom<sup>-3</sup>.
+* **kpoints_density_static**, default = 300 for `accuracy = default` and 1000 for `accuracy = high`, unit = &Angstrom;<sup>-3</sup>.
 The kpoints sampling density for all static energy calculations
 
 
