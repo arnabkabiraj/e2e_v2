@@ -174,7 +174,7 @@ The name of the file where the log will be written.
 * **kpoints_density_relax**, default = 150 for `accuracy = default` and 300 for `accuracy = high`, unit = &Angstrom;<sup>-3</sup>.
 The kpoints sampling density for relaxations
 
-* **kpoints_density_static**, default = 300 for `accuracy = default` and 1000 for `accuracy = high`, unit = &Angstrom;<sup>-3</sup>.
+* **kpoints_density_static**, default = 300 for `accuracy = default` and 1000 for `accuracy = high`, unit = $$\overset{\circ}{A}<sup>-3</sup>.
 The kpoints sampling density for all static energy calculations
 
 
