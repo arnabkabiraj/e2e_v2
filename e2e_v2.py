@@ -1629,7 +1629,7 @@ else:
     with open('N4list', 'rb') as f:
         N4list = load(f)
     N = len(N1list)
-    print('neighbor mapping successfully read')
+    log('neighbor mapping successfully read')
 
 N1list = np.array(N1list)
 N2list = np.array(N2list)
