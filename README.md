@@ -76,7 +76,7 @@ The VASP execution command for the collinear calculations.
 The VASP execution command for the non-collinear calculations including the spin-orbit coupling effect. 
 
 * **XC_functional**, default = PBE.
-The employed exchange-correlation functional. The available options are: `XC_functional = PBE or LDA or SCAN or R2SCAN or SCAN+RVV10 or PBEsol`.
+The employed exchange-correlation functional. The available options are: `XC_functional = PBE or LDA or SCAN or R2SCAN or SCAN+RVV10 or PBEsol`. Note that for the SCAN variants, `LDAU = False` is imposed. 
 
 * **randomise_VASP_command**, default = False.
 Add a random number after the VASP command while executing. Proper VASP executable symbolic links have to be set up before execution. It might help in identifying and killing processes running on the same machine.
