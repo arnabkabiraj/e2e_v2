@@ -4,7 +4,7 @@ This project contains a single Python script that can determine the Curie or Nee
 The detailed working principle of the code can be found in the following publications. Please cite these if you find e2e_v2 useful. 
 
 1. Kabiraj, A., Kumar, M. & Mahapatra, S. High-throughput discovery of high Curie point two-dimensional ferromagnetic materials. *npj Comput Mater* **6**, 35 (2020). https://doi.org/10.1038/s41524-020-0300-2
-2. Arnab Kabiraj, Tripti Jain, and Santanu Mahapatra. Massive Monte Carlo simulations-guided interpretable learning of two-dimensional Curie temperature. *manuscript under review*.
+2. Arnab Kabiraj, Tripti Jain, and Santanu Mahapatra. Massive Monte Carlo simulations-guided interpretable learning of two-dimensional Curie temperature. manuscript under review in *Patterns*, Cell Press. The DOI and other details would be updated once available.
 
 
 ## Initial preparation
