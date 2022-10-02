@@ -241,7 +241,7 @@ For how many steps the system is allowed to thermalize. The properties like magn
 
 The main outputs of the code are written to a log file (the name specified by the `log_filename` tag) in addition to the outputs printed to stdout and stderr. The full process of extraction of the magnetic parameters from the DFT data is detailed in this file. There would also be DFT calculation directories, namely *relaxations*, *static_runs*, and *MAE*. The *MC_Heisenberg* directory (or the directory specified by the `directory` tag of input_MC) contains all the outputs and dump files from the MC process. The main MC output data is written to a file with a name ending with *M-X.dat*. This file should have data with 7 columns. The first column would be the temperature data. The second and third columns contain the magnetization and susceptibility data of the regions with up spins at the ground state. The fourth and fifth columns contain the magnetization and susceptibility data of the regions with down spins at the ground state. Finally, the sixth and seventh columns contain the magnetization and susceptibility data of the whole lattice. To determine either Curie or Neel temperature, one simply has to find at what temperature the data at the 3rd column peaks.
 
-A typical example of the calculation of Curie temperature of CrI<sub>3</sub> with *U* = 2.7 eV and *J* = 0.7 eV can be found in the [figshare repository of the 2nd paper](https://doi.org/10.6084/m9.figshare.20439309).
+Two typical examples of the calculation of Curie temperature of CrI<sub>3</sub> and CrBr<sub>3</sub> with *U* = 2.7 eV and *J* = 0.7 eV can be found in the [figshare repository of the 2nd paper](https://doi.org/10.6084/m9.figshare.20439309).
 
 
 ## License
