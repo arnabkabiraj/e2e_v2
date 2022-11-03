@@ -3,8 +3,8 @@
 This project contains a single Python script that can determine the Curie or Neel Temperature and other relevant magnetic properties of 2D materials from the crystal structure information. The code has many requirements; the primary one is having access to the code [VASP](https://www.vasp.at/). The script is tightly integrated with VASP and relies upon it to perform all the energy calculations. However, with a bit of effort, it should be possible to interface this code with other *ab initio* codes as well. Besides VASP, the code relies heavily on other Python packages such as [pymatgen](https://pymatgen.org/), [custodian](http://materialsproject.github.io/custodian/), [ASE](https://wiki.fysik.dtu.dk/ase/) and [numba](https://numba.pydata.org/). These packages need to be available in your environment to run the script properly. The proper installation instructions for these packages can be found on their respective websites, which I have hyperlinked.
 The detailed working principle of the code can be found in the following publications. Please cite these if you find e2e_v2 useful. 
 
-1. Kabiraj, A., Kumar, M. & Mahapatra, S. High-throughput discovery of high Curie point two-dimensional ferromagnetic materials. *npj Comput Mater* **6**, 35 (2020). https://doi.org/10.1038/s41524-020-0300-2
-2. Arnab Kabiraj, Tripti Jain, and Santanu Mahapatra. Massive Monte Carlo simulations-guided interpretable learning of two-dimensional Curie temperature. Manuscript under review in *Patterns*, Cell Press. The DOI and other details would be updated once available.
+1. Kabiraj, A., Kumar, M. & Mahapatra, S. High-throughput discovery of high Curie point two-dimensional ferromagnetic materials. *npj Comput Mater* **6**, 35 (2020). https://doi.org/10.1038/s41524-020-0300-2.
+2. Kabiraj, A., Jain, T. & Mahapatra, S. Massive Monte Carlo simulations-guided interpretable learning of two-dimensional Curie temperature. *Patterns* **3**, 100625 (2022). https://doi.org/10.1016/j.patter.2022.100625.
 
 
 ## Initial preparation
